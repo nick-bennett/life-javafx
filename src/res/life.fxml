@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Slider?>
+<?import edu.cnm.deepdive.life.view.WorldView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.beans.property.SimpleStringProperty?>
+<?import javafx.beans.property.SimpleIntegerProperty?>
+<GridPane xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="edu.cnm.deepdive.life.controller.Life">
+
+  <fx:define>
+    <SimpleStringProperty fx:id="densityTooltipText"/>
+  </fx:define>
+
+  <fx:define>
+    <SimpleIntegerProperty fx:id="densitySliderValue"/>
+  </fx:define>
+
+  <stylesheets>
+    <URL value="@styles.css"/>
+  </stylesheets>
+
+  <ScrollPane
+    fx:id="viewScroller"
+    GridPane.columnIndex="0"
+    GridPane.rowIndex="0"
+    GridPane.columnSpan="3">
+
+    <WorldView
+      fx:id="terrainView"
+      width="2000"
+      height="2000"/>
+
+  </ScrollPane>
+
+  <ToggleButton
+    fx:id="toggleRun"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="0"
+    text="%start"
+    onAction="#toggleRun"/>
+
+  <Slider
+    fx:id="densitySlider"
+    min="0"
+    max="100"
+    value="${densitySliderValue}"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="1">
+
+    <tooltip>
+      <Tooltip
+        fx:id="sliderValue"
+        text="${densityTooltipText}"/>
+    </tooltip>
+
+  </Slider>
+
+  <Button
+    fx:id="reset"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="2"
+    text="%reset"
+    onAction="#reset"/>
+
+</GridPane>
