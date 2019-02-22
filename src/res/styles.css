@@ -1,9 +1,8 @@
 GridPane {
-  -fx-padding: 10px;
-  -fx-min-width: 100%;
+  -fx-padding: 5px 10px 5px 10px;
+  -fx-max-width: 100%;
   -fx-min-height: 100%;
   -fx-alignment: center;
-  -fx-spacing: 10px;
   -fx-hgap: 10px;
   -fx-vgap: 10px;
 }
@@ -11,10 +10,10 @@ GridPane {
 #viewScroller {
   -fx-hbar-policy: never;
   -fx-vbar-policy: never;
-  -fx-min-width: 600px;
-  -fx-max-width: 600px;
-  -fx-min-height: 600px;
-  -fx-max-height: 600px;
+  -fx-min-width:640px;
+  -fx-max-width: 640px;
+  -fx-min-height: 640px;
+  -fx-max-height: 640px;
   -fx-pannable: true;
   -fx-background: black;
 }
@@ -34,4 +33,9 @@ Text {
 .button {
   -fx-font-weight: bold;
   -fx-min-width: 100px;
+}
+
+#populationDisplay {
+  -fx-fill-width: true;
+  -fx-text-alignment: left;
 }

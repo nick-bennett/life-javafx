@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.life;
 
+import edu.cnm.deepdive.life.controller.Life;
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,8 @@ public class Main extends Application {
   private static final String LAYOUT_NAME = RESOURCE_DIR + "life.fxml";
   private static final String WINDOW_TITLE_KEY = "title";
 
+  private Life controller;
+
   public static void main(String[] args) {
     launch(args);
   }
@@ -24,11 +27,18 @@ public class Main extends Application {
     ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME);
     FXMLLoader fxmlLoader = new FXMLLoader(classLoader.getResource(LAYOUT_NAME), bundle);
     Parent parent = fxmlLoader.load();
+    controller = fxmlLoader.getController();
     Scene scene = new Scene(parent);
     primaryStage.setScene(scene);
     primaryStage.setTitle(bundle.getString(WINDOW_TITLE_KEY));
     primaryStage.setResizable(false);
     primaryStage.show();
+  }
+
+  @Override
+  public void stop() throws Exception {
+    controller.stop();
+    super.stop();
   }
 
 }

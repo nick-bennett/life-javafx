@@ -21,8 +21,7 @@ import javafx.scene.text.Text;
 
 public class Life {
 
-  public static final int INITIAL_DENSITY = 25;
-  private static final int WORLD_SIZE = 200;
+  private static final int DEFAULT_WORLD_SIZE = 320;
 
   private World world;
   private Random rng;
@@ -32,6 +31,8 @@ public class Life {
   private long initialTerrainViewWidth;
   private long initialTerrainViewHeight;
 
+  @FXML
+  private Integer worldSize = DEFAULT_WORLD_SIZE;
   @FXML
   private Text generationDisplay;
   @FXML
@@ -45,8 +46,6 @@ public class Life {
   @FXML
   private Slider densitySlider;
   @FXML
-  private Tooltip sliderValue;
-  @FXML
   private Button reset;
   @FXML
   private CheckBox toggleFit;
@@ -57,7 +56,7 @@ public class Life {
   private void initialize() {
     rng = new Random();
     updater = new Updater();
-    terrain = new Cell[WORLD_SIZE][WORLD_SIZE];
+    terrain = new Cell[worldSize][worldSize];
     initialTerrainViewHeight = Math.round(terrainView.getHeight());
     initialTerrainViewWidth = Math.round(terrainView.getWidth());
     reset(null);
@@ -78,25 +77,8 @@ public class Life {
 
   @FXML
   private void reset(ActionEvent actionEvent) {
-    world = new World(WORLD_SIZE, densitySlider.getValue() / 100, rng);
+    world = new World(worldSize, densitySlider.getValue() / 100, rng);
     updateDisplay();
-  }
-
-  private void updateDisplay() {
-    world.copyTerrain(terrain);
-    terrainView.draw(terrain);
-    generationDisplay.setText(
-        String.format(resources.getString("generationDisplay"), world.getGeneration()));
-    populationDisplay.setText(
-        String.format(resources.getString("populationDisplay"), world.getPopulation()));
-  }
-
-  private void stop() {
-    running = false;
-    updater.stop();
-    toggleRun.setText(resources.getString("start"));
-    toggleRun.setSelected(false);
-    reset.setDisable(false);
   }
 
   @FXML
@@ -111,6 +93,23 @@ public class Life {
     if (!running) {
       updateDisplay();
     }
+  }
+
+  private void updateDisplay() {
+    world.copyTerrain(terrain);
+    terrainView.draw(terrain);
+    generationDisplay.setText(
+        String.format(resources.getString("generationDisplay"), world.getGeneration()));
+    populationDisplay.setText(
+        String.format(resources.getString("populationDisplay"), world.getPopulation()));
+  }
+
+  public void stop() {
+    running = false;
+    updater.stop();
+    toggleRun.setText(resources.getString("start"));
+    toggleRun.setSelected(false);
+    reset.setDisable(false);
   }
 
   private class Runner extends Thread {
