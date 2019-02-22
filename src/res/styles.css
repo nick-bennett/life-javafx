@@ -1,16 +1,16 @@
 GridPane {
-  -fx-padding: 5px 10px 5px 10px;
+  -fx-padding: 5px 5px 5px 5px;
   -fx-max-width: 100%;
   -fx-min-height: 100%;
   -fx-alignment: center;
-  -fx-hgap: 10px;
-  -fx-vgap: 10px;
+  -fx-hgap: 5px;
+  -fx-vgap: 5px;
 }
 
 #viewScroller {
   -fx-hbar-policy: never;
   -fx-vbar-policy: never;
-  -fx-min-width:640px;
+  -fx-min-width: 640px;
   -fx-max-width: 640px;
   -fx-min-height: 640px;
   -fx-max-height: 640px;
@@ -38,4 +38,8 @@ Text {
 #populationDisplay {
   -fx-fill-width: true;
   -fx-text-alignment: left;
+}
+
+#terrainView {
+  -cell-color: chartreuse;
 }
