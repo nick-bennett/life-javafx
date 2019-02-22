@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="life-javafx:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/life_javafx_jar</output-path>
+    <root id="root">
+      <element id="archive" name="life-javafx.jar">
+        <element id="module-output" name="life-javafx" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/../life-model/out/artifacts/life_model_jar/life-model.jar" />
+    </root>
+  </artifact>
+</component>

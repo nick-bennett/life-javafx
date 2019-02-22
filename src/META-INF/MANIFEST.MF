@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: life-model.jar
+Main-Class: edu.cnm.deepdive.life.Main
+
