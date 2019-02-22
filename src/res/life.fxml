@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.Label?>
 <GridPane xmlns="http://javafx.com/javafx"
   xmlns:fx="http://javafx.com/fxml"
   fx:controller="edu.cnm.deepdive.life.controller.Life">
@@ -65,6 +66,7 @@
     styleClass="button"
     GridPane.rowIndex="2"
     GridPane.columnIndex="0"
+    GridPane.rowSpan="2"
     text="%start"
     onAction="#toggleRun"/>
 
@@ -84,11 +86,20 @@
 
   </Slider>
 
+  <Label
+    id="densityLabel"
+    labelFor="$densitySlider"
+    GridPane.rowIndex="3"
+    GridPane.columnIndex="1"
+    mnemonicParsing="true"
+    text="%densityLabel"/>
+
   <Button
     fx:id="reset"
     styleClass="button"
     GridPane.rowIndex="2"
     GridPane.columnIndex="2"
+    GridPane.rowSpan="2"
     text="%reset"
     onAction="#reset"/>
 
@@ -96,6 +107,7 @@
     fx:id="toggleFit"
     GridPane.rowIndex="2"
     GridPane.columnIndex="3"
+    GridPane.rowSpan="2"
     text="%toggleFit"
     onAction="#toggleFit"/>
 

@@ -1,7 +1,7 @@
 package edu.cnm.deepdive.life.controller;
 
-import edu.cnm.deepdive.ca.model.Cell;
-import edu.cnm.deepdive.ca.model.World;
+import edu.cnm.deepdive.life.model.Cell;
+import edu.cnm.deepdive.life.model.World;
 import edu.cnm.deepdive.life.view.WorldView;
 import java.util.Deque;
 import java.util.LinkedList;

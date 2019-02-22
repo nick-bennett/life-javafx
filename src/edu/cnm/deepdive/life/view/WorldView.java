@@ -1,6 +1,6 @@
 package edu.cnm.deepdive.life.view;
 
-import edu.cnm.deepdive.ca.model.Cell;
+import edu.cnm.deepdive.life.model.Cell;
 import java.util.List;
 import javafx.beans.value.ObservableValue;
 import javafx.css.CssMetaData;

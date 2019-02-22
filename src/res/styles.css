@@ -7,6 +7,10 @@ GridPane {
   -fx-vgap: 5px;
 }
 
+Text {
+  -fx-font-style: italic;
+}
+
 #viewScroller {
   -fx-hbar-policy: never;
   -fx-vbar-policy: never;
@@ -18,16 +22,24 @@ GridPane {
   -fx-background: black;
 }
 
+#terrainView {
+  -cell-color: aqua;
+}
+
 #densitySlider {
   -fx-major-tick-unit: 1;
   -fx-minor-tick-count: 0;
   -fx-snap-to-ticks: true;
   -fx-show-tick-labels: false;
   -fx-show-tick-marks: false;
+  -fx-alignment: bottom-center;
+  -fx-max-width: Infinity;
 }
 
-Text {
-  -fx-font-style: italic;
+#densityLabel {
+  -fx-font-weight: bold;
+  -fx-alignment: top-center;
+  -fx-max-width: Infinity;
 }
 
 .button {
@@ -35,11 +47,6 @@ Text {
   -fx-min-width: 100px;
 }
 
-#populationDisplay {
-  -fx-fill-width: true;
-  -fx-text-alignment: left;
-}
-
-#terrainView {
-  -cell-color: chartreuse;
+CheckBox {
+  -fx-font-weight: bold;
 }
