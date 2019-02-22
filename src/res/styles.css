@@ -16,4 +16,22 @@ GridPane {
   -fx-min-height: 600px;
   -fx-max-height: 600px;
   -fx-pannable: true;
+  -fx-background: black;
+}
+
+#densitySlider {
+  -fx-major-tick-unit: 1;
+  -fx-minor-tick-count: 0;
+  -fx-snap-to-ticks: true;
+  -fx-show-tick-labels: false;
+  -fx-show-tick-marks: false;
+}
+
+Text {
+  -fx-font-style: italic;
+}
+
+.button {
+  -fx-font-weight: bold;
+  -fx-min-width: 100px;
 }
